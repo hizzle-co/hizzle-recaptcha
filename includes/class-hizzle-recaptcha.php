@@ -47,10 +47,28 @@ class Hizzle_reCAPTCHA {
 	 * Class Constructor.
 	 */
 	public function __construct() {
+		add_filter( 'plugin_action_links_hizzle-recaptcha/plugin.php', array( $this, 'link_to_settings' ) );
 		add_action( 'admin_menu', array( $this, 'add_settings_menu' ) );
 		add_action( 'wp_footer', array( $this, 'maybe_add_scripts' ), 11 );
 		add_action( 'login_footer', array( $this, 'maybe_add_scripts' ), 11 );
 		add_action( 'init', array( $this, 'load_integrations' ), 0 );
+	}
+
+	/**
+	 * Links to the settings page.
+	 *
+	 * @param array $actions
+	 */
+	public function link_to_settings( $actions ) {
+
+		$actions[] = sprintf(
+			'<a href="%s" style="color: #33691e;">%s</a>',
+			esc_url( add_query_arg( 'page', 'hizzle-recaptcha', admin_url( 'options-general.php' ) ) ),
+			__( 'Settings', 'hizzle-recaptcha' )
+		);
+
+		return $actions;
+
 	}
 
 	/**

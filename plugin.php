@@ -51,7 +51,7 @@ function hizzle_recaptcha_load_plugin_textdomain() {
 	load_plugin_textdomain(
 		'hizzle-recaptcha',
 		FALSE,
-		plugin_dir_path( HIZZLE_RECAPTCHA_PLUGIN_FILE ) . 'languages/'
+		trailingslashit( dirname( plugin_basename( HIZZLE_RECAPTCHA_PLUGIN_FILE ) ) ) . 'languages/'
 	);
 
 }

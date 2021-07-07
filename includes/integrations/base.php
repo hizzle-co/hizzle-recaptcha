@@ -35,7 +35,7 @@ class Hizzle_reCAPTCHA_Integration {
         foreach ( apply_filters( 'hizzle_recaptcha_data', $data ) as $key => $value ) {
             $key    = sanitize_key( $key );
             $value  = esc_attr( $value );
-            $_data .= "data-$key='$value'";
+            $_data .= "data-$key='value'";
         }
 
         return "<div class='g-recaptcha hizzle-recaptcha' style='max-width: 100%; overflow: hidden; margin-top: 10px; margin-bottom: 10px;' $_data></div>";
@@ -47,7 +47,24 @@ class Hizzle_reCAPTCHA_Integration {
 	 * @since 1.0.0
 	 */
 	public function display() {
-		echo $this->get_html();
+        Hizzle_reCAPTCHA::$load_scripts = true;
+
+        $data = array(
+            'sitekey'  => hizzle_recaptcha_get_option( 'site_key' ),
+            'theme'    => 'light',
+            'size'     => 'normal',
+            'tabindex' => '0',
+        );
+
+        $_data = '';
+
+        foreach ( apply_filters( 'hizzle_recaptcha_data', $data ) as $key => $value ) {
+            $key    = sanitize_key( $key );
+            $value  = esc_attr( $value );
+            $_data .= "data-$key='$value'";
+        }
+
+        echo "<div class='g-recaptcha hizzle-recaptcha' style='max-width: 100%; overflow: hidden; margin-top: 10px; margin-bottom: 10px;' $_data></div>";
 	}
 
     /**

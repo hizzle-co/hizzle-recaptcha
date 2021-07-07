@@ -35,7 +35,7 @@ class Hizzle_reCAPTCHA_Integration {
         foreach ( apply_filters( 'hizzle_recaptcha_data', $data ) as $key => $value ) {
             $key    = sanitize_key( $key );
             $value  = esc_attr( $value );
-            $_data .= "data-$key='value'";
+            $_data .= "data-$key='$value'";
         }
 
         return "<div class='g-recaptcha hizzle-recaptcha' style='max-width: 100%; overflow: hidden; margin-top: 10px; margin-bottom: 10px;' $_data></div>";

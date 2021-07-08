@@ -49,14 +49,14 @@ No. We only support version 2 keys for the time being.
 
 = How can I get in touch? =
 
-* Use the [contact form on our website](https://hizzle.co/contact/).
+Use the [contact form on our website](https://hizzle.co/contact/).
 
 = How can I contribute to reCAPTCHA by Hizzle? =
 
 There are a lot of ways to contribute:-
 
-* Star the plugin on [GitHub.](https://github.com/hizzle-co/recaptcha/)
-* [Clone the plugin,](https://github.com/hizzle-co/recaptcha/) make improvements to the code and send us a [pull request](https://github.com/hizzle-co/recaptcha/pulls) so that we can share your improvements with the world.
+* Star the plugin on [GitHub.](https://github.com/hizzle-co/hizzle-recaptcha/)
+* [Clone the plugin,](https://github.com/hizzle-co/hizzle-recaptcha/) make improvements to the code and send us a [pull request](https://github.com/hizzle-co/hizzle-recaptcha/pulls) so that we can share your improvements with the world.
 * Give us a [5* rating](https://wordpress.org/support/plugin/hizzle-recaptcha/reviews/?filter=5) on WordPress.
 
 = Will this plugin work with my theme? =
@@ -64,7 +64,27 @@ There are a lot of ways to contribute:-
 Yes, as long as your theme follows the WordPress theme development guidelines.
 
 == Screenshots ==
-1. Settings page
+1. bbPress new reply Google reCAPTCHA.
+2. bbpress new topic Google reCAPTCHA.
+3. BuddPress registration form Google reCAPTCHA.
+4. BuddyPress new group Google reCAPTCHA.
+5. Contact Form 7 Google reCAPTCHA.
+6. Hizzle reCAPTCHA settings page.
+7. Mailchimp for WordPress Google reCAPTCHA.
+8. Noptin newsletter Google reCAPTCHA.
+9. WooCommerce checkout form Google reCAPTCHA.
+10. WooCommerce login form Google reCAPTCHA.
+11. WooCommerce lost password form Google reCAPTCHA.
+12. WooCommerce registration form Google reCAPTCHA.
+13. WooCommerce reset password form Google reCAPTCHA.
+14. WordPress comment form Google reCAPTCHA.
+15. WordPress login form Google reCAPTCHA.
+16. WordPress lost password form Google reCAPTCHA.
+17. WordPress register form Google reCAPTCHA.
+18. WordPress reset password form Google reCAPTCHA.
+19. WPForms Google reCAPTCHA.
+20. WPForo new reply form Google reCAPTCHA.
+21. WPForo new topic form Google reCAPTCHA.
 
 == Changelog ==
 

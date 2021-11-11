@@ -88,5 +88,8 @@ Yes, as long as your theme follows the WordPress theme development guidelines.
 
 == Changelog ==
 
+= 1.0.1 =
+* Compatibility with new Noptin forms editor.
+
 = 1.0.0 =
 * Initial release.

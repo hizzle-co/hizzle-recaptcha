@@ -46,7 +46,7 @@ class Hizzle_reCAPTCHA_Comment_Integration extends Hizzle_reCAPTCHA_Integration 
 	   if ( is_wp_error( $error ) ) {
 			wp_die(
 				'<p>' . esc_html( $error->get_error_message() ) . '</p>',
-				__( 'Comment Submission Failure, Click the BACK button on your browser and try again.', 'hizzle-recaptcha' ),
+				esc_html__( 'Comment Submission Failure, Click the BACK button on your browser and try again.', 'hizzle-recaptcha' ),
 				array(
 					'response'  => 400,
 					'back_link' => true,

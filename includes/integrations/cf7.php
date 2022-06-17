@@ -64,11 +64,11 @@ class Hizzle_reCAPTCHA_CF7_Integration extends Hizzle_reCAPTCHA_Integration {
 	 */
 	public function verify_token( $result ) {
 
-		if ( empty( $_POST['_wpcf7'] ) ) {
+		if ( empty( $_POST['_wpcf7'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Missing
 			return $result;
 		}
 
-		$cf7_text = do_shortcode( '[contact-form-7 id="' . $_POST['_wpcf7'] . '"]' );
+		$cf7_text = do_shortcode( '[contact-form-7 id="' . $_POST['_wpcf7'] . '"]' ); // phpcs:ignore WordPress.Security.NonceVerification.Missing
 
 		if ( false === strpos( $cf7_text, 'hizzle-recaptcha' ) ) {
 			return $result;

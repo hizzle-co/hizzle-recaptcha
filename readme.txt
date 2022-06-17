@@ -2,10 +2,10 @@
 Contributors: picocodes, mutendebrian
 Tags: spam, google, recaptcha, captcha
 Requires at least: 4.9
-Tested up to: 5.7
+Tested up to: 6.0
 Requires PHP: 5.3
-Version: 1.0.0
-Stable tag: 1.0.0
+Version: 1.0.1
+Stable tag: 1.0.1
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -90,6 +90,7 @@ Yes, as long as your theme follows the WordPress theme development guidelines.
 
 = 1.0.1 =
 * Compatibility with new Noptin forms editor.
+* Bump tested WordPress version
 
 = 1.0.0 =
 * Initial release.

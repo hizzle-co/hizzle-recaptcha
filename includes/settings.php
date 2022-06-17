@@ -3,8 +3,10 @@
 	<?php
 
 		// Display the title.
-		$title = esc_html( get_admin_page_title() );
-		echo "<h1>$title</h1>";
+		printf(
+			'<h1>%s</h1>',
+			esc_html( get_admin_page_title() )
+		);
 
 		// Fire a hook before printing the settings page.
 		do_action( 'hizzle_recaptcha_settings_page_top' );
@@ -12,14 +14,14 @@
 		if ( false === $saved_settings ) {
 			printf(
 				'<div class="error is-dismissible hizzle-recaptcha-notice"><p>%s</p></div>',
-				__( 'Could not save your settings. Please try again.', 'hizzle-recaptcha' )
+				esc_html__( 'Could not save your settings. Please try again.', 'hizzle-recaptcha' )
 			);
 		}
 
 		if ( true === $saved_settings ) {
 			printf(
 				'<div class="notice notice-success is-dismissible hizzle-recaptcha-notice"><p>%s</p></div>',
-				__( 'Your settings have been saved.', 'hizzle-recaptcha' )
+				esc_html__( 'Your settings have been saved.', 'hizzle-recaptcha' )
 			);
 		}
 
@@ -43,32 +45,32 @@
 		.notice:not(.hizzle-recaptcha-notice),
 		div.error:not(.hizzle-recaptcha-notice),
 		div.updated:not(.hizzle-recaptcha-notice) {
-    		display: none!important;
+			display: none!important;
 		}
 	</style>
 	<form method="POST" class="hizzle-recaptcha-main-settings-form">
 		<?php wp_nonce_field( 'hizzle-recaptcha', 'hizzle-recaptcha' ); ?>
 		<p>
-			<?php _e( 'Currently, we only support site keys created with version 2 of Google reCAPTCHA.', 'hizzle-recaptcha' );?>
-			<a target="_blank" href="http://www.google.com/recaptcha/admin"><?php _e( 'Get your site key here.', 'hizzle-recaptcha' );?></a>
+			<?php esc_html_e( 'Currently, we only support site keys created with version 2 of Google reCAPTCHA.', 'hizzle-recaptcha' ); ?>
+			<a target="_blank" href="http://www.google.com/recaptcha/admin"><?php esc_html_e( 'Get your site key here.', 'hizzle-recaptcha' ); ?></a>
 		</p>
 		<?php foreach ( $settings as $setting_id => $args ) : ?>
 
 			<label class="hizzle-recaptcha-field-wrapper">
-				<span class="hizzle-recaptcha-label"><?php echo esc_html( $args['label' ] ); ?></span>
+				<span class="hizzle-recaptcha-label"><?php echo esc_html( $args['label'] ); ?></span>
 				<div class="hizzle-recaptcha_settings-wrapper">
-					<?php if ( 'text' == $args['type'] ) : ?>
+					<?php if ( 'text' === $args['type'] ) : ?>
 						<input
 							type="text"
 							class="regular-text"
-							name="hizzle_recaptcha[<?php echo esc_attr( $setting_id );?>]"
-							value="<?php echo esc_attr( hizzle_recaptcha_get_option( $setting_id, $args['default'] ) );?>"
+							name="hizzle_recaptcha[<?php echo esc_attr( $setting_id ); ?>]"
+							value="<?php echo esc_attr( hizzle_recaptcha_get_option( $setting_id, $args['default'] ) ); ?>"
 						>
 					<?php endif; ?>
-					<?php if ( 'checkbox' == $args['type'] ) : ?>
+					<?php if ( 'checkbox' === $args['type'] ) : ?>
 						<input
 							type="checkbox"
-							name="hizzle_recaptcha[<?php echo esc_attr( $setting_id );?>]"
+							name="hizzle_recaptcha[<?php echo esc_attr( $setting_id ); ?>]"
 							<?php checked( null !== hizzle_recaptcha_get_option( $setting_id, null ) ); ?>
 							value="1"
 						>&nbsp;<span><?php echo wp_kses_post( $args['label2'] ); ?></span>
@@ -88,7 +90,7 @@
 		<?php endforeach; ?>
 
 		<div class="hizzle-recaptcha-field-wrapper">
-			<span class="hizzle-recaptcha-label"><?php _e( 'Show reCAPTCHA on:', 'hizzle-recaptcha' ); ?></span>
+			<span class="hizzle-recaptcha-label"><?php esc_html_e( 'Show reCAPTCHA on:', 'hizzle-recaptcha' ); ?></span>
 			<div class="hizzle-recaptcha_settings-wrapper">
 				<?php foreach ( $available_integrations as $integration_id => $integration ) : ?>
 				<?php

@@ -34,7 +34,7 @@ class Hizzle_reCAPTCHA_Login_Integration extends Hizzle_reCAPTCHA_Integration {
 	 */
 	public function confirm_login( $user ) {
 
-		if ( is_wp_error( $user ) || defined( 'XMLRPC_REQUEST' ) || empty( $_POST['log'] ) || empty( $_POST['pwd'] ) ) {
+		if ( is_wp_error( $user ) || defined( 'XMLRPC_REQUEST' ) || empty( $_POST['log'] ) || empty( $_POST['pwd'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Missing
 			return $user;
 		}
 

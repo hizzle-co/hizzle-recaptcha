@@ -20,7 +20,7 @@ class Hizzle_reCAPTCHA {
 	 *
 	 * @var string
 	 */
-	public static $version = '1.0.0';
+	public static $version = '1.0.1';
 
 	/**
 	 * Loaded integrations.
@@ -93,9 +93,8 @@ class Hizzle_reCAPTCHA {
 			// Ensure that it is available.
 			if ( isset( $available_integrations[ $integration ] ) ) {
 				require_once $available_integrations[ $integration ]['file'];
-				self::$integrations[ $integration ] = new $available_integrations[ $integration ]['class'];
+				self::$integrations[ $integration ] = new $available_integrations[ $integration ]['class']();
 			}
-
 		}
 
 	}
@@ -108,7 +107,7 @@ class Hizzle_reCAPTCHA {
 	public function maybe_add_scripts() {
 		if ( self::$load_scripts && $this->show_captcha() ) {
 			$url = apply_filters( 'hizzle_recaptcha_api_url', 'https://www.google.com/recaptcha/api.js' );
-			wp_enqueue_script( 'recaptcha', $url, array(), false, true );
+			wp_enqueue_script( 'recaptcha', $url, array(), null, true ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
 		}
 	}
 
@@ -141,18 +140,18 @@ class Hizzle_reCAPTCHA {
 		$saved_settings         = $this->maybe_save_settings();
 		$enabled_integrations   = $this->get_enabled_integrations();
 		$available_integrations = wp_list_pluck( $this->get_available_integrations(), 'name' );
-		$settings         = array(
-			'site_key'    => array(
+		$settings               = array(
+			'site_key'       => array(
 				'type'    => 'text',
 				'label'   => __( 'Site Key', 'hizzle-recaptcha' ),
 				'default' => '',
 			),
-			'secret_key'  => array(
+			'secret_key'     => array(
 				'type'    => 'text',
 				'label'   => __( 'Secret Key', 'hizzle-recaptcha' ),
 				'default' => '',
 			),
-			'hide_logged_in'  => array(
+			'hide_logged_in' => array(
 				'type'    => 'checkbox',
 				'label'   => __( 'Hide from logged in users', 'hizzle-recaptcha' ),
 				'label2'  => __( 'If checked, logged in users will not see the reCAPTCHA checkbox', 'hizzle-recaptcha' ),
@@ -206,90 +205,90 @@ class Hizzle_reCAPTCHA {
 		$integrations = apply_filters(
 			'hizzle_recaptcha_available_integrations',
 			array(
-				'login'          => array(
-					'name'       => __( 'Login Form', 'hizzle-recaptcha' ),
-					'class'      => 'Hizzle_reCAPTCHA_Login_Integration',
-					'file'       => plugin_dir_path( __FILE__ ) . 'integrations/login.php',
+				'login'            => array(
+					'name'  => __( 'Login Form', 'hizzle-recaptcha' ),
+					'class' => 'Hizzle_reCAPTCHA_Login_Integration',
+					'file'  => plugin_dir_path( __FILE__ ) . 'integrations/login.php',
 				),
-				'registration'   => array(
-					'name'       => __( 'Registration Form', 'hizzle-recaptcha' ),
-					'class'      => 'Hizzle_reCAPTCHA_Registration_Integration',
-					'file'       => plugin_dir_path( __FILE__ ) . 'integrations/registration.php',
+				'registration'     => array(
+					'name'  => __( 'Registration Form', 'hizzle-recaptcha' ),
+					'class' => 'Hizzle_reCAPTCHA_Registration_Integration',
+					'file'  => plugin_dir_path( __FILE__ ) . 'integrations/registration.php',
 				),
-				'resetpass'      => array(
-					'name'       => __( 'Reset Password Form', 'hizzle-recaptcha' ),
-					'class'      => 'Hizzle_reCAPTCHA_Resetpass_Integration',
-					'file'       => plugin_dir_path( __FILE__ ) . 'integrations/resetpass.php',
+				'resetpass'        => array(
+					'name'  => __( 'Reset Password Form', 'hizzle-recaptcha' ),
+					'class' => 'Hizzle_reCAPTCHA_Resetpass_Integration',
+					'file'  => plugin_dir_path( __FILE__ ) . 'integrations/resetpass.php',
 				),
-				'lostpassword'   => array(
-					'name'       => __( 'Lost Password Form', 'hizzle-recaptcha' ),
-					'class'      => 'Hizzle_reCAPTCHA_Lost_Password_Integration',
-					'file'       => plugin_dir_path( __FILE__ ) . 'integrations/lostpassword.php',
+				'lostpassword'     => array(
+					'name'  => __( 'Lost Password Form', 'hizzle-recaptcha' ),
+					'class' => 'Hizzle_reCAPTCHA_Lost_Password_Integration',
+					'file'  => plugin_dir_path( __FILE__ ) . 'integrations/lostpassword.php',
 				),
-				'comment'        => array(
-					'name'       => __( 'Comment Form', 'hizzle-recaptcha' ),
-					'class'      => 'Hizzle_reCAPTCHA_Comment_Integration',
-					'file'       => plugin_dir_path( __FILE__ ) . 'integrations/comment.php',
+				'comment'          => array(
+					'name'  => __( 'Comment Form', 'hizzle-recaptcha' ),
+					'class' => 'Hizzle_reCAPTCHA_Comment_Integration',
+					'file'  => plugin_dir_path( __FILE__ ) . 'integrations/comment.php',
 				),
-				'woocommerce'    => array(
-					'name'       => __( 'WooCommerce Checkout', 'hizzle-recaptcha' ),
-					'class'      => 'Hizzle_reCAPTCHA_WooCommerce_Integration',
-					'installed'  => function_exists( 'WC' ),
-					'file'       => plugin_dir_path( __FILE__ ) . 'integrations/woocommerce.php',
+				'woocommerce'      => array(
+					'name'      => __( 'WooCommerce Checkout', 'hizzle-recaptcha' ),
+					'class'     => 'Hizzle_reCAPTCHA_WooCommerce_Integration',
+					'installed' => function_exists( 'WC' ),
+					'file'      => plugin_dir_path( __FILE__ ) . 'integrations/woocommerce.php',
 				),
-				'noptin'         => array(
-					'name'       => __( 'Noptin Newsletter Forms', 'hizzle-recaptcha' ),
-					'class'      => 'Hizzle_reCAPTCHA_Noptin_Integration',
-					'installed'  => function_exists( 'noptin' ),
-					'file'       => plugin_dir_path( __FILE__ ) . 'integrations/noptin.php',
+				'noptin'           => array(
+					'name'      => __( 'Noptin Newsletter Forms', 'hizzle-recaptcha' ),
+					'class'     => 'Hizzle_reCAPTCHA_Noptin_Integration',
+					'installed' => function_exists( 'noptin' ),
+					'file'      => plugin_dir_path( __FILE__ ) . 'integrations/noptin.php',
 				),
-				'bbpress-reply'  => array(
-					'name'       => __( 'New Reply (bbPress)', 'hizzle-recaptcha' ),
-					'class'      => 'Hizzle_reCAPTCHA_bbPress_Reply_Integration',
-					'installed'  => function_exists( 'bbpress' ),
-					'file'       => plugin_dir_path( __FILE__ ) . 'integrations/bbpress-reply.php',
+				'bbpress-reply'    => array(
+					'name'      => __( 'New Reply (bbPress)', 'hizzle-recaptcha' ),
+					'class'     => 'Hizzle_reCAPTCHA_bbPress_Reply_Integration',
+					'installed' => function_exists( 'bbpress' ),
+					'file'      => plugin_dir_path( __FILE__ ) . 'integrations/bbpress-reply.php',
 				),
-				'bbpress-topic'   => array(
-					'name'       => __( 'New Topic (bbPress)', 'hizzle-recaptcha' ),
-					'class'      => 'Hizzle_reCAPTCHA_bbPress_Topic_Integration',
-					'installed'  => function_exists( 'bbpress' ),
-					'file'       => plugin_dir_path( __FILE__ ) . 'integrations/bbpress-topic.php',
+				'bbpress-topic'    => array(
+					'name'      => __( 'New Topic (bbPress)', 'hizzle-recaptcha' ),
+					'class'     => 'Hizzle_reCAPTCHA_bbPress_Topic_Integration',
+					'installed' => function_exists( 'bbpress' ),
+					'file'      => plugin_dir_path( __FILE__ ) . 'integrations/bbpress-topic.php',
 				),
-				'buddypress'     => array(
-					'name'       => __( 'New Topic (BuddyPress)', 'hizzle-recaptcha' ),
-					'class'      => 'Hizzle_reCAPTCHA_BuddyPress_Integration',
-					'installed'  => function_exists( 'buddypress' ),
-					'file'       => plugin_dir_path( __FILE__ ) . 'integrations/buddypress.php',
+				'buddypress'       => array(
+					'name'      => __( 'New Topic (BuddyPress)', 'hizzle-recaptcha' ),
+					'class'     => 'Hizzle_reCAPTCHA_BuddyPress_Integration',
+					'installed' => function_exists( 'buddypress' ),
+					'file'      => plugin_dir_path( __FILE__ ) . 'integrations/buddypress.php',
 				),
-				'cf7'            => array(
-					'name'       => __( 'Contact Form 7', 'hizzle-recaptcha' ),
-					'class'      => 'Hizzle_reCAPTCHA_CF7_Integration',
-					'installed'  => function_exists( 'wpcf7' ),
-					'file'       => plugin_dir_path( __FILE__ ) . 'integrations/cf7.php',
+				'cf7'              => array(
+					'name'      => __( 'Contact Form 7', 'hizzle-recaptcha' ),
+					'class'     => 'Hizzle_reCAPTCHA_CF7_Integration',
+					'installed' => function_exists( 'wpcf7' ),
+					'file'      => plugin_dir_path( __FILE__ ) . 'integrations/cf7.php',
 				),
-				'mailchimp'      => array(
-					'name'       => __( 'Mailchimp for WordPress', 'hizzle-recaptcha' ),
-					'class'      => 'Hizzle_reCAPTCHA_Mailchimp_Integration',
-					'installed'  => defined( 'MC4WP_VERSION' ),
-					'file'       => plugin_dir_path( __FILE__ ) . 'integrations/mailchimp.php',
+				'mailchimp'        => array(
+					'name'      => __( 'Mailchimp for WordPress', 'hizzle-recaptcha' ),
+					'class'     => 'Hizzle_reCAPTCHA_Mailchimp_Integration',
+					'installed' => defined( 'MC4WP_VERSION' ),
+					'file'      => plugin_dir_path( __FILE__ ) . 'integrations/mailchimp.php',
 				),
-				'wpforms'        => array(
-					'name'       => __( 'WPForms', 'hizzle-recaptcha' ),
-					'class'      => 'Hizzle_reCAPTCHA_WPForms_Integration',
-					'installed'  => function_exists( 'wpforms' ),
-					'file'       => plugin_dir_path( __FILE__ ) . 'integrations/wpforms.php',
+				'wpforms'          => array(
+					'name'      => __( 'WPForms', 'hizzle-recaptcha' ),
+					'class'     => 'Hizzle_reCAPTCHA_WPForms_Integration',
+					'installed' => function_exists( 'wpforms' ),
+					'file'      => plugin_dir_path( __FILE__ ) . 'integrations/wpforms.php',
 				),
 				'wpforo_new_topic' => array(
-					'name'       => __( 'New Topic (wpForo)', 'hizzle-recaptcha' ),
-					'class'      => 'Hizzle_reCAPTCHA_WPforo_Topic_Integration',
-					'installed'  => function_exists( 'WPF' ),
-					'file'       => plugin_dir_path( __FILE__ ) . 'integrations/wpforo_new_topic.php',
+					'name'      => __( 'New Topic (wpForo)', 'hizzle-recaptcha' ),
+					'class'     => 'Hizzle_reCAPTCHA_WPforo_Topic_Integration',
+					'installed' => function_exists( 'WPF' ),
+					'file'      => plugin_dir_path( __FILE__ ) . 'integrations/wpforo_new_topic.php',
 				),
-				'wpforo_reply'   => array(
-					'name'       => __( 'New Reply (wpForo)', 'hizzle-recaptcha' ),
-					'class'      => 'Hizzle_reCAPTCHA_WPforo_Reply_Integration',
-					'installed'  => function_exists( 'WPF' ),
-					'file'       => plugin_dir_path( __FILE__ ) . 'integrations/wpforo_reply.php',
+				'wpforo_reply'     => array(
+					'name'      => __( 'New Reply (wpForo)', 'hizzle-recaptcha' ),
+					'class'     => 'Hizzle_reCAPTCHA_WPforo_Reply_Integration',
+					'installed' => function_exists( 'WPF' ),
+					'file'      => plugin_dir_path( __FILE__ ) . 'integrations/wpforo_reply.php',
 				),
 			)
 		);

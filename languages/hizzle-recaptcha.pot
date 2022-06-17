@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Hizzle reCAPTCHA\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-03 06:44+0000\n"
+"POT-Creation-Date: 2022-06-17 07:31+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Generator: Loco https://localise.biz/\n"
 "X-Loco-Version: 2.4.6; wp-5.7.2"
 
-#: includes/class-hizzle-recaptcha.php:212
+#: includes/class-hizzle-recaptcha.php:229
 msgid "Comment Form"
 msgstr ""
 
@@ -25,25 +25,25 @@ msgid ""
 "again."
 msgstr ""
 
-#: includes/class-hizzle-recaptcha.php:247
+#: includes/class-hizzle-recaptcha.php:264
 msgid "Contact Form 7"
 msgstr ""
 
-#: includes/settings.php:15
+#: includes/settings.php:17
 msgid "Could not save your settings. Please try again."
 msgstr ""
 
-#: includes/settings.php:52
+#: includes/settings.php:54
 msgid ""
 "Currently, we only support site keys created with version 2 of Google "
 "reCAPTCHA."
 msgstr ""
 
-#: includes/settings.php:53
+#: includes/settings.php:55
 msgid "Get your site key here."
 msgstr ""
 
-#: includes/class-hizzle-recaptcha.php:139
+#: includes/class-hizzle-recaptcha.php:156
 msgid "Hide from logged in users"
 msgstr ""
 
@@ -63,72 +63,76 @@ msgstr ""
 msgid "https://hizzle.co/recaptcha"
 msgstr ""
 
-#: includes/class-hizzle-recaptcha.php:140
+#: includes/class-hizzle-recaptcha.php:157
 msgid "If checked, logged in users will not see the reCAPTCHA checkbox"
 msgstr ""
 
-#: includes/class-hizzle-recaptcha.php:192
+#: includes/class-hizzle-recaptcha.php:209
 msgid "Login Form"
 msgstr ""
 
-#: includes/class-hizzle-recaptcha.php:207
+#: includes/class-hizzle-recaptcha.php:224
 msgid "Lost Password Form"
 msgstr ""
 
-#: includes/class-hizzle-recaptcha.php:253
+#: includes/class-hizzle-recaptcha.php:270
 msgid "Mailchimp for WordPress"
 msgstr ""
 
-#: includes/class-hizzle-recaptcha.php:229
+#: includes/class-hizzle-recaptcha.php:246
 msgid "New Reply (bbPress)"
 msgstr ""
 
-#: includes/class-hizzle-recaptcha.php:271
+#: includes/class-hizzle-recaptcha.php:288
 msgid "New Reply (wpForo)"
 msgstr ""
 
-#: includes/class-hizzle-recaptcha.php:235
+#: includes/class-hizzle-recaptcha.php:252
 msgid "New Topic (bbPress)"
 msgstr ""
 
-#: includes/class-hizzle-recaptcha.php:241
+#: includes/class-hizzle-recaptcha.php:258
 msgid "New Topic (BuddyPress)"
 msgstr ""
 
-#: includes/class-hizzle-recaptcha.php:265
+#: includes/class-hizzle-recaptcha.php:282
 msgid "New Topic (wpForo)"
 msgstr ""
 
-#: includes/class-hizzle-recaptcha.php:223
+#: includes/class-hizzle-recaptcha.php:240
 msgid "Noptin Newsletter Forms"
 msgstr ""
 
-#: includes/integrations/base.php:66
+#: includes/integrations/base.php:87
 msgid "Please verify that you're not a robot."
 msgstr ""
 
-#: includes/class-hizzle-recaptcha.php:104
-#: includes/class-hizzle-recaptcha.php:105
+#: includes/class-hizzle-recaptcha.php:121
+#: includes/class-hizzle-recaptcha.php:122
 msgid "reCAPTCHA by Hizzle"
 msgstr ""
 
-#: includes/class-hizzle-recaptcha.php:197
+#: includes/class-hizzle-recaptcha.php:214
 msgid "Registration Form"
 msgstr ""
 
-#: includes/class-hizzle-recaptcha.php:202
+#: includes/class-hizzle-recaptcha.php:219
 msgid "Reset Password Form"
 msgstr ""
 
-#: includes/class-hizzle-recaptcha.php:134
+#: includes/class-hizzle-recaptcha.php:151
 msgid "Secret Key"
 msgstr ""
 
-#: includes/settings.php:91
+#: includes/class-hizzle-recaptcha.php:67
+msgid "Settings"
+msgstr ""
+
+#: includes/settings.php:93
 msgid "Show reCAPTCHA on:"
 msgstr ""
 
-#: includes/class-hizzle-recaptcha.php:129
+#: includes/class-hizzle-recaptcha.php:146
 msgid "Site Key"
 msgstr ""
 
@@ -140,19 +144,19 @@ msgstr ""
 msgid "Unable to verify that you're not a robot."
 msgstr ""
 
-#: includes/integrations/base.php:87
+#: includes/integrations/base.php:108
 msgid "Unable to verify that you're not a robot. Please try again."
 msgstr ""
 
-#: includes/class-hizzle-recaptcha.php:217
+#: includes/class-hizzle-recaptcha.php:234
 msgid "WooCommerce Checkout"
 msgstr ""
 
-#: includes/class-hizzle-recaptcha.php:259
+#: includes/class-hizzle-recaptcha.php:276
 msgid "WPForms"
 msgstr ""
 
-#: includes/settings.php:22
+#: includes/settings.php:24
 msgid "Your settings have been saved."
 msgstr ""
 

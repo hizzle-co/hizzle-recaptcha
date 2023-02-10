@@ -2,7 +2,7 @@
 Contributors: picocodes, mutendebrian
 Tags: spam, google, recaptcha, captcha
 Requires at least: 4.9
-Tested up to: 6.0
+Tested up to: 6.1
 Requires PHP: 5.3
 Version: 1.0.1
 Stable tag: 1.0.1
@@ -87,6 +87,9 @@ Yes, as long as your theme follows the WordPress theme development guidelines.
 21. WPForo new topic form Google reCAPTCHA.
 
 == Changelog ==
+
+= 1.0.2 =
+* Add ability to user alternative script source.
 
 = 1.0.1 =
 * Compatibility with new Noptin forms editor.

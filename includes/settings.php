@@ -75,6 +75,13 @@
 							value="1"
 						>&nbsp;<span><?php echo wp_kses_post( $args['label2'] ); ?></span>
 					<?php endif; ?>
+					<?php if ( 'select' === $args['type'] ) : ?>
+						<select name="hizzle_recaptcha[<?php echo esc_attr( $setting_id ); ?>]">
+							<?php foreach ( $args['options'] as $option_value => $option_label ) : ?>
+								<option value="<?php echo esc_attr( $option_value ); ?>" <?php selected( $option_value, hizzle_recaptcha_get_option( $setting_id, $args['default'] ) ); ?>><?php echo esc_html( $option_label ); ?></option>
+							<?php endforeach; ?>
+						</select>
+					<?php endif; ?>
 					<?php do_action( 'hizzle_recaptcha_settings_display_' . $args['type'], $args, $setting_id ); ?>
 					<?php
 						if ( ! empty( $args['desc'] ) ) {

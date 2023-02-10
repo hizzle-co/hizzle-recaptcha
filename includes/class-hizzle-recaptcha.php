@@ -106,7 +106,13 @@ class Hizzle_reCAPTCHA {
 	 */
 	public function maybe_add_scripts() {
 		if ( self::$load_scripts && $this->show_captcha() ) {
-			$url = apply_filters( 'hizzle_recaptcha_api_url', 'https://www.google.com/recaptcha/api.js' );
+
+			if ( 'recaptcha' === hizzle_recaptcha_get_option( 'load_from' ) ) {
+				$url = apply_filters( 'hizzle_recaptcha_api_url', 'https://www.recaptcha.net/recaptcha/api.js' );
+			} else {
+				$url = apply_filters( 'hizzle_recaptcha_api_url', 'https://www.google.com/recaptcha/api.js' );
+			}
+
 			wp_enqueue_script( 'recaptcha', $url, array(), null, true ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
 		}
 	}
@@ -150,6 +156,16 @@ class Hizzle_reCAPTCHA {
 				'type'    => 'text',
 				'label'   => __( 'Secret Key', 'hizzle-recaptcha' ),
 				'default' => '',
+			),
+			'load_from'      => array(
+				'type'    => 'select',
+				'label'   => __( 'Load from', 'hizzle-recaptcha' ),
+				'options' => array(
+					'google'    => 'google.com',
+					'recaptcha' => 'recaptcha.net',
+				),
+				'default' => 'google',
+				'desc'    => __( 'Google is the default, but you can use recaptcha.net if Google is blocked in your country.', 'hizzle-recaptcha' ),
 			),
 			'hide_logged_in' => array(
 				'type'    => 'checkbox',

@@ -4,8 +4,8 @@ Tags: spam, google, recaptcha, captcha
 Requires at least: 4.9
 Tested up to: 6.1
 Requires PHP: 5.3
-Version: 1.0.1
-Stable tag: 1.0.1
+Version: 1.0.2
+Stable tag: 1.0.2
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 

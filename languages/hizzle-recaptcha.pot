@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Hizzle reCAPTCHA\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-17 07:31+0000\n"
+"POT-Creation-Date: 2023-02-10 03:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Generator: Loco https://localise.biz/\n"
 "X-Loco-Version: 2.4.6; wp-5.7.2"
 
-#: includes/class-hizzle-recaptcha.php:229
+#: includes/class-hizzle-recaptcha.php:245
 msgid "Comment Form"
 msgstr ""
 
@@ -25,7 +25,7 @@ msgid ""
 "again."
 msgstr ""
 
-#: includes/class-hizzle-recaptcha.php:264
+#: includes/class-hizzle-recaptcha.php:280
 msgid "Contact Form 7"
 msgstr ""
 
@@ -43,7 +43,13 @@ msgstr ""
 msgid "Get your site key here."
 msgstr ""
 
-#: includes/class-hizzle-recaptcha.php:156
+#: includes/class-hizzle-recaptcha.php:168
+msgid ""
+"Google is the default, but you can use recaptcha.net if Google is blocked in "
+"your country."
+msgstr ""
+
+#: includes/class-hizzle-recaptcha.php:172
 msgid "Hide from logged in users"
 msgstr ""
 
@@ -63,64 +69,68 @@ msgstr ""
 msgid "https://hizzle.co/recaptcha"
 msgstr ""
 
-#: includes/class-hizzle-recaptcha.php:157
+#: includes/class-hizzle-recaptcha.php:173
 msgid "If checked, logged in users will not see the reCAPTCHA checkbox"
 msgstr ""
 
-#: includes/class-hizzle-recaptcha.php:209
+#: includes/class-hizzle-recaptcha.php:162
+msgid "Load from"
+msgstr ""
+
+#: includes/class-hizzle-recaptcha.php:225
 msgid "Login Form"
 msgstr ""
 
-#: includes/class-hizzle-recaptcha.php:224
+#: includes/class-hizzle-recaptcha.php:240
 msgid "Lost Password Form"
 msgstr ""
 
-#: includes/class-hizzle-recaptcha.php:270
+#: includes/class-hizzle-recaptcha.php:286
 msgid "Mailchimp for WordPress"
 msgstr ""
 
-#: includes/class-hizzle-recaptcha.php:246
+#: includes/class-hizzle-recaptcha.php:262
 msgid "New Reply (bbPress)"
 msgstr ""
 
-#: includes/class-hizzle-recaptcha.php:288
+#: includes/class-hizzle-recaptcha.php:304
 msgid "New Reply (wpForo)"
 msgstr ""
 
-#: includes/class-hizzle-recaptcha.php:252
+#: includes/class-hizzle-recaptcha.php:268
 msgid "New Topic (bbPress)"
 msgstr ""
 
-#: includes/class-hizzle-recaptcha.php:258
+#: includes/class-hizzle-recaptcha.php:274
 msgid "New Topic (BuddyPress)"
 msgstr ""
 
-#: includes/class-hizzle-recaptcha.php:282
+#: includes/class-hizzle-recaptcha.php:298
 msgid "New Topic (wpForo)"
 msgstr ""
 
-#: includes/class-hizzle-recaptcha.php:240
+#: includes/class-hizzle-recaptcha.php:256
 msgid "Noptin Newsletter Forms"
 msgstr ""
 
-#: includes/integrations/base.php:87
+#: includes/integrations/base.php:72
 msgid "Please verify that you're not a robot."
 msgstr ""
 
-#: includes/class-hizzle-recaptcha.php:121
-#: includes/class-hizzle-recaptcha.php:122
+#: includes/class-hizzle-recaptcha.php:127
+#: includes/class-hizzle-recaptcha.php:128
 msgid "reCAPTCHA by Hizzle"
 msgstr ""
 
-#: includes/class-hizzle-recaptcha.php:214
+#: includes/class-hizzle-recaptcha.php:230
 msgid "Registration Form"
 msgstr ""
 
-#: includes/class-hizzle-recaptcha.php:219
+#: includes/class-hizzle-recaptcha.php:235
 msgid "Reset Password Form"
 msgstr ""
 
-#: includes/class-hizzle-recaptcha.php:151
+#: includes/class-hizzle-recaptcha.php:157
 msgid "Secret Key"
 msgstr ""
 
@@ -128,11 +138,11 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: includes/settings.php:93
+#: includes/settings.php:100
 msgid "Show reCAPTCHA on:"
 msgstr ""
 
-#: includes/class-hizzle-recaptcha.php:146
+#: includes/class-hizzle-recaptcha.php:152
 msgid "Site Key"
 msgstr ""
 
@@ -144,15 +154,15 @@ msgstr ""
 msgid "Unable to verify that you're not a robot."
 msgstr ""
 
-#: includes/integrations/base.php:108
+#: includes/integrations/base.php:93
 msgid "Unable to verify that you're not a robot. Please try again."
 msgstr ""
 
-#: includes/class-hizzle-recaptcha.php:234
+#: includes/class-hizzle-recaptcha.php:250
 msgid "WooCommerce Checkout"
 msgstr ""
 
-#: includes/class-hizzle-recaptcha.php:276
+#: includes/class-hizzle-recaptcha.php:292
 msgid "WPForms"
 msgstr ""
 

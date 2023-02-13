@@ -20,7 +20,7 @@ class Hizzle_reCAPTCHA {
 	 *
 	 * @var string
 	 */
-	public static $version = '1.0.2';
+	public static $version = '1.0.3';
 
 	/**
 	 * Loaded integrations.

@@ -3,7 +3,7 @@
  * Plugin Name: Hizzle reCAPTCHA
  * Plugin URI: https://hizzle.co/recaptcha
  * Description: The ultimate WordPress and WooCommerce reCAPTCHA plugin
- * Version: 1.0.2
+ * Version: 1.0.3
  * Author: Hizzle
  * Author URI: https://hizzle.co/
  * Text Domain: hizzle-recaptcha
